@@ -49,5 +49,5 @@ code_101_words = [
   'Software as a Service',
   'Docker & Kubernetes'
 ]
-generator = Generator.new(code_101_words, 3)
+generator = Generator.new(code_101_words, 4)
 generator.populate_csv
