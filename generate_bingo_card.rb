@@ -1,17 +1,20 @@
 require 'csv'
 
-def randomise(array)
-  array.shuffle
-end
+class Generator
+  def initialize(array)
+    @array = array
+  end
 
-def print_to_csv(array)
-  CSV.open('words.csv', 'w') do |csv_obj|
-    csv_obj << array
+  def randomise
+    @array.shuffle
+  end
+
+  def generate_csv
+    CSV.open('words.csv', 'w') do |csv_obj|
+      csv_obj << randomise
+    end
   end
 end
 
-def generate_bingo_card(array)
-  print_to_csv(randomise(array))
-end
-
-generate_bingo_card([1, 2, 3, 4, 5])
+generator = Generator.new([1, 2, 3, 4, 5])
+generator.generate_csv
