@@ -1,7 +1,7 @@
 require 'csv'
 
 class Generator
-  def initialize(array, amount, row_length)
+  def initialize(array, row_length, amount)
     @array = array
     @amount = amount
     @row_length = row_length
@@ -61,7 +61,7 @@ code_101_words = [
   'Software as a Service',
   'Docker & Kubernetes'
 ]
-generator = Generator.new(code_101_words, 3 ,5)
+generator = Generator.new(code_101_words, 5 ,3)
 generator.populate_csv
 
 # generator = Generator.new([1, 2, 3, 4, 5, 6], 3, 3)
