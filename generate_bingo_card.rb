@@ -1,8 +1,9 @@
 require 'csv'
 
 class Generator
-  def initialize(array)
+  def initialize(array, amount)
     @array = array
+    @amount = amount
     @counter = 0
   end
 
@@ -15,13 +16,16 @@ class Generator
     "words_#{@counter}.csv" 
   end
 
-  def generate_csv
+  def create_csv
     CSV.open(create_title, 'w') do |csv_obj|
       csv_obj << randomised_array
     end
   end
+
+  def generate
+    @amount.times { create_csv }
+  end
 end
 
-generator = Generator.new([1, 2, 3, 4, 5])
-generator.generate_csv
-generator.generate_csv
+generator = Generator.new([1, 2, 3, 4, 5], 3)
+generator.generate
