@@ -11,21 +11,43 @@ class Generator
     @array.shuffle
   end
 
-  def create_title
-    @counter += 1
-    "words_#{@counter}.csv" 
-  end
-
-  def create_csv
-    CSV.open(create_title, 'w') do |csv_obj|
-      csv_obj << randomised_array
+  def populate_csv
+    CSV.open('words.csv', 'w') do |csv_obj|
+      @amount.times do 
+        csv_obj << ["Bingo Sheet"]
+        csv_obj << randomised_array
+      end
     end
-  end
-
-  def generate
-    @amount.times { create_csv }
   end
 end
 
-generator = Generator.new([1, 2, 3, 4, 5], 3)
-generator.generate
+
+code_101_words = [
+  'Continuous Integration',
+  'Coding Languages', 
+  'Test Coverage',
+  'Open Source',
+  'Microservices vs Monolith',
+  'Proof-of-Concept & Prototypes',
+  'Continuous Deployment',
+  'Automated Testing',
+  'Version Control',
+  'Serverless',
+  'Back end vs Front end',
+  'API',
+  'CI/CD Pipeline',
+  'Caching',
+  'Latency',
+  'Software Delivery Lifecycle',
+  'JavaScript',
+  'BDD & TDD',
+  'DevOps',
+  'Ubiquitous Language',
+  'Technical Debt & Refactoring',
+  'Vanilla vs Library vs Framework',
+  'Test Doubles',
+  'Software as a Service',
+  'Docker & Kubernetes'
+]
+generator = Generator.new(code_101_words, 3)
+generator.populate_csv
