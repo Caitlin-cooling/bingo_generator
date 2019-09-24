@@ -56,7 +56,7 @@ code_101_words = [
   'DevOps',
   'Ubiquitous Language',
   'Technical Debt & Refactoring',
-  'Vanilla vs Library vs Framework',
+  'JSON',
   'Test Doubles',
   'Software as a Service',
   'Docker & Kubernetes'
