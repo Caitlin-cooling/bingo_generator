@@ -35,33 +35,24 @@ end
 
 
 code_101_words = [
-  'Continuous Integration',
+  'Framework',
   'Coding Languages', 
-  'Test Coverage',
   'Open Source',
-  'Microservices vs Monolith',
-  'Proof-of-Concept & Prototypes',
-  'Continuous Deployment',
-  'Automated Testing',
-  'Version Control',
-  'Serverless',
   'Back end vs Front end',
   'API',
+  'Tech debt',
+  'Delivery team',
   'CI/CD Pipeline',
-  'Caching',
-  'Latency',
   'Software Delivery Lifecycle',
+  'HTML',
   'JavaScript',
-  'BDD & TDD',
   'DevOps',
-  'Ubiquitous Language',
   'Technical Debt & Refactoring',
-  'Vanilla vs Library vs Framework',
-  'Test Doubles',
-  'Software as a Service',
-  'Docker & Kubernetes'
+  'JSON',
+  'Docker',
+  'Kubernetes'
 ]
-generator = Generator.new(code_101_words, 5 ,3)
+generator = Generator.new(code_101_words, 4 , 10)
 generator.populate_csv
 
 # generator = Generator.new([1, 2, 3, 4, 5, 6], 3, 3)
